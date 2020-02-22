@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="content-wrapper">
+    <h3 class="content-title"><%= @post.title %></h3>
+    <% if user_signed_in? %>
+      <div class="content-space">
+        <span><%= @post.user.name %></span>
+        <div class="content-space__item">
+          <%= link_to "編集", "/posts/#{@post.id}/edit" %>
+          <%= link_to "削除", "/posts/#{@post.id}", method: :delete %>
+        </div>
+      </div>
+    <% else %>
+      <div class="content-space">
+        <span><%= @post.user.name %></span>
+      </div>
+    <% end %>
+    <%= image_tag @post.image %>
+    <div class="content-text">
+      <%= simple_format @post.content %>
+    </div>
+  </div>
+</div>

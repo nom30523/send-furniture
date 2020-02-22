@@ -1,0 +1,26 @@
+.devise-title {
+  margin-top: 0;
+  padding-top: 60px;
+}
+
+.devise-form input {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.actions input {
+  width: 250px;
+  height: 40px;
+  background-color: #fca2a2;
+  color: #fff;
+  padding: 5px 5px;
+  margin: 10px 0;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.actions input:hover {
+  opacity: .7;
+}
+
