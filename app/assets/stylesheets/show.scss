@@ -1,0 +1,39 @@
+.content-wrapper {
+  width: 100%;
+  padding: 60px 0;
+  .content-title {
+    margin-bottom: 0;
+  }
+  .content-space {
+    width: 100%;
+    height: 25px;
+    span {
+      font-size: 12px;
+      color: #b3b3b3;
+    }
+    &__item {
+      float: right;
+      a {
+        display: inline-block;
+        background-color: #fca2a2;
+        text-decoration: none;
+        border-radius: 3px;
+        padding: 2px 8px;
+        font-size: 14px;
+        color: #fff;
+      }
+      a:hover {
+        opacity: .7;
+      }
+    }
+  }
+  
+  img {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .content-text {
+    min-height: 300px;
+    border: 1px solid #ededed;
+  }
+}

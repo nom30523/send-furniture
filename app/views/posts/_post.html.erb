@@ -1,0 +1,14 @@
+<div class="main-content-list">
+  <%= link_to "/posts/#{post.id}" do %>
+    <div class="main-content-list__img">
+      <%= image_tag post.image %>
+    </div>
+    <div class="main-content-list__text">
+      <h3><%= post.title %></h3>
+      <div class="main-content-list__text__info">
+        <span><%= post.user.name %></span>
+        <span class="main-content-list__text__info--right"><%= post.created_at %></span>
+      </div>
+    </div>
+  <% end %>
+</div>
