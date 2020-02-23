@@ -18,5 +18,31 @@
     <div class="content-text">
       <%= simple_format @post.content %>
     </div>
+    <div class="comment-wrapper">
+      <p class="comment-summary">コメント一覧</p>
+      <div class="comment-content">
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <div class="comment-content__list">
+              <div class="comment-content__list__text">
+                <%= simple_format comment.text %>
+              </div>
+              <div class="comment-content__list__info">
+                <span><%= comment.user.name %></span>
+                <span><%= comment.post.created_at %></span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% if current_user %>
+        <%= form_with(model: [@post, @comment], local: true, class: "comment-form clearfix") do |form| %>
+          <%= form.text_area :text, placeholder: "コメントを入力してください", rows: "5", class: "comment-form__text" %>
+          <%= form.submit "Comment", class: "comment-form__btn" %>
+        <% end %>
+      <% else%>
+        <strong><p>※ログインするとコメント投稿できるようになります</p></strong>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user)
   end
 
   def new
@@ -16,6 +16,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def destroy
