@@ -7,7 +7,7 @@
       <h3><%= post.title %></h3>
       <div class="main-content-list__text__info">
         <span><%= post.user.name %></span>
-        <span class="main-content-list__text__info--right"><%= post.created_at %></span>
+        <span class="main-content-list__text__info--right"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
       </div>
     </div>
   <% end %>
