@@ -29,16 +29,16 @@
               </div>
               <div class="comment-content__list__info">
                 <span><%= comment.user.name %></span>
-                <span><%= comment.post.created_at %></span>
+                <span><%= comment.post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
       <% if current_user %>
-        <%= form_with(model: [@post, @comment], local: true, class: "comment-form clearfix") do |form| %>
-          <%= form.text_area :text, placeholder: "コメントを入力してください", rows: "5", class: "comment-form__text" %>
-          <%= form.submit "Comment", class: "comment-form__btn" %>
+        <%= form_with(model: [@post, @comment], local: true, id: "new_comment", class: "comment-form clearfix") do |form| %>
+          <%= form.text_area :text, placeholder: "コメントを入力してください", rows: "5", class: "comment-form__text textbox" %>
+          <%= form.submit "Comment", class: "comment-form__btn form_submit" %>
         <% end %>
       <% else%>
         <strong><p>※ログインするとコメント投稿できるようになります</p></strong>
