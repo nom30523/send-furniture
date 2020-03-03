@@ -1,4 +1,5 @@
 <%= form.text_field :title, placeholder: "タイトル", class: "new-post-form__content" %>
 <%= form.text_field :image, placeholder: "画像 URL", class: "new-post-form__content" %>
+<%= form.text_field :tag_name, placeholder: "タグ    例）キッチン リビング", class: "new-post-form__content", value: @tag_list %>
 <%= form.text_area :content, placeholder: "本文" , rows: "10" %>
 <%= form.submit "SEND", class: "new-post-form__btn" %>

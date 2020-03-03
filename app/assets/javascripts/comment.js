@@ -4,11 +4,11 @@ $(function() {
 
     let html = `<div class="comment-content__list">
                   <div class="comment-content__list__text">
-                   <p>${commentText}</p>
+                    <p>${commentText}</p>
                   </div>
                   <div class="comment-content__list__info">
                     <span>${comment.user_name}</span>
-                    <span>${comment.post_created_at}</span>
+                    <span>${comment.created_at}</span>
                   </div>
                 </div>`
     return html;
