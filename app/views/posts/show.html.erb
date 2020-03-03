@@ -1,6 +1,9 @@
 <div class="container">
   <div class="content-wrapper">
     <h3 class="content-title"><%= @post.title %></h3>
+    <% @post.tags.each do |tag| %>
+      <span class="tag-list"><%= tag.tag_name %></span>
+    <% end %>
     <% if user_signed_in? %>
       <div class="content-space">
         <span><%= @post.user.name %></span>
@@ -21,18 +24,16 @@
     <div class="comment-wrapper">
       <p class="comment-summary">コメント一覧</p>
       <div class="comment-content">
-        <% if @comments %>
-          <% @comments.each do |comment| %>
-            <div class="comment-content__list">
-              <div class="comment-content__list__text">
-                <%= simple_format comment.text %>
-              </div>
-              <div class="comment-content__list__info">
-                <span><%= comment.user.name %></span>
-                <span><%= comment.post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
-              </div>
+        <% @comments.each do |comment| %>
+          <div class="comment-content__list">
+            <div class="comment-content__list__text">
+              <%= simple_format comment.text %>
             </div>
-          <% end %>
+            <div class="comment-content__list__info">
+              <span><%= comment.user.name %></span>
+              <span><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+            </div>
+          </div>
         <% end %>
       </div>
       <% if current_user %>
@@ -40,7 +41,7 @@
           <%= form.text_area :text, placeholder: "コメントを入力してください", rows: "5", class: "comment-form__text textbox" %>
           <%= form.submit "Comment", class: "comment-form__btn form_submit" %>
         <% end %>
-      <% else%>
+      <% else %>
         <strong><p>※ログインするとコメント投稿できるようになります</p></strong>
       <% end %>
     </div>

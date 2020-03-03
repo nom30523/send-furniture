@@ -14,23 +14,29 @@
     <div class="header">
       <div class="header-content container">
         <div class="header-content__logo">
-          <%= link_to "SEND FURNITURE", root_path %>
+          <%= link_to "Send Furniture", root_path %>
         </div>
-        <% if user_signed_in? %>
-          <ul class="header-content__btn">
-            <li><%= link_to "新規投稿", new_post_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        <% else %>
-          <ul class="header-content__btn">
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
-          </ul>
-        <% end %>
+        <div class="header-icon">
+          <i class="fa fa-bars" id="show"></i>
+          <div class="menu">
+            <% if user_signed_in? %>
+              <ul class="content-menu">
+                <li><%= link_to "新規投稿", new_post_path %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            <% else %>
+              <ul class="content-menu">
+                <li><%= link_to "ログイン", new_user_session_path %></li>
+                <li><%= link_to "新規登録", new_user_registration_path %></li>
+              </ul>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <%= yield %>
     <div class="footer">
+      &copy; 2020 Send Furniture
     </div>
   </div>
   </body>
