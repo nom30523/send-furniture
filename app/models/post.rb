@@ -22,7 +22,7 @@ class Post < ApplicationRecord
   end
 
   def self.search(keyword)
-    return Post.includes(:user) unless keyword
-    Post.joins(:tags).where('content LIKE(?) or tag_name LIKE(?)', "%#{keyword}%", "%#{keyword}%")
+    return Post.includes(:user) if keyword.blank?
+    Post.joins(:tags).where('content LIKE(?) or tag_name LIKE(?)', "%#{keyword}%", "%#{keyword}%").distinct
   end
 end
