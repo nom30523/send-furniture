@@ -16,7 +16,7 @@ Send Furniture
 
 # アプリの機能
 1. 投稿機能
-![投稿機能](https://i.gyazo.com/539f4d16d80d89e2600cee285a9f6f82.mp4)
+![投稿機能](https://user-images.githubusercontent.com/60598776/77602633-480bfa00-6f51-11ea-9758-21454d6c34f5.gif)
 2. タグ登録機能
 3. コメント機能
 4. 投稿検索機能
