@@ -52,3 +52,6 @@ production:
   database: send-furniture_production
   username: send-furniture
   password: <%= ENV['SEND-FURNITURE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
